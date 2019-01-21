@@ -242,6 +242,11 @@ it('Should support multiline default export statement', async () => {
   expect(() => parse(result)).not.toThrow()
 })
 
+it('Should support dynamic default export statement', async () => {
+  const result = await mdx(`export default getBlogPost();`)
+  expect(() => parse(result)).not.toThrow()
+})
+
 it('Should support semicolons in default export statement', async () => {
   const result = await mdx(`export default Layout;`)
   expect(() => parse(result)).not.toThrow()
